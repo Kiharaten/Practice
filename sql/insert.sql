@@ -129,3 +129,33 @@ INSERT INTO rental (
 --     0,
 --     1
 -- );
+
+INSERT INTO rental (
+    id,
+    number,
+    date,
+    disk_id,
+    friend_id,
+    status_id
+    ) SELECT
+    max(rental.id) + 1,
+    3,
+    '2020-01-01 00:00:00',
+    (select disk.id from disk where disk.name = "HARRY POTTER"),
+    (select friend.id from friend where friend.name = "NAKAMURA"),
+    1
+    FROM rental
+    ;
+
+INSERT INTO disk (
+        id,
+        name,
+        genre,
+        actor
+        ) SELECT 
+        max(id) + 1,
+        ?,
+        ?,
+        ?
+        FROM disk
+        ;

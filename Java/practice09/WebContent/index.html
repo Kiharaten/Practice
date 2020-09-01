@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>DVD貸出管理 - MENU</title>
+</head>
+<body>
+    <article class="header">
+        <h1>DVD貸出管理 - MENU</h1>
+    </article><!--header-->
+
+    <article class="main">
+        <ul>      	
+            <li><button onclick="location.href='./RentalServlet?v=lend'">貸出登録</button></li>
+            <li><button onclick="location.href='./RentalServlet?v=check'">貸出確認</button></li>
+            <li><button onclick="location.href='./RentalServlet?v=history'">貸出履歴</button></li>
+        </ul>
+        <ul>       	
+            <li><button onclick="location.href='./ActorServlet?v=add'">役者の追加</button></li>
+            <li><button onclick="location.href='./ActorServlet?v=check'">役者の確認</button></li>
+
+        </ul>
+        <ul>
+            <li><button onclick="location.href='./FriendServlet?v=add'">友達の追加</button></li>
+            <li><button onclick="location.href='./FriendServlet?v=check'">友達の確認</button></li>
+
+        </ul>
+        <ul>
+            <li><button onclick="location.href='./DiskServlet?v=add'">DVDの追加</button></li>
+            <li><button onclick="location.href='./DiskServlet?v=check'">DVDの確認</button></li>
+
+        </ul>  
+        <ul>
+            <li><button onclick="location.href='./GenreServlet?v=add'">ジャンルの追加</button></li>
+            <li><button onclick="location.href='./GenreServlet?v=check'">ジャンルの確認</button></li>
+
+        </ul>
+    </article><!--main-->
+
+    <article class="footer">
+        <p>HAL.inc All rights reserved</p>
+    </article><!--footer-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

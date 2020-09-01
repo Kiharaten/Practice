@@ -6,12 +6,7 @@
 -- update status with disk title when returned disk.(sample title is "STAR WARS")
 UPDATE rental
 SET   status_id = 0 
-WHERE rental.status_id = 1
-    AND disk_id = (
-        SELECT disk.id
-        FROM disk 
-        WHERE disk.title = "STAR WARS"
-    );
+WHERE rental.status_id = 1 AND rental.id = 1;
 
 -- -- update test data at all tables.
 -- UPDATE status

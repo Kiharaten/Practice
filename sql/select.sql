@@ -88,7 +88,7 @@ INNER JOIN status
 WHERE friend.name = "KIHARA";
 
 -- show rental status with rental status
-SELECT rental.id as "貸出ID", rental.number as "貸出番号", rental.date as "貸出日", disk.title as "ディスクタイトル", friend.name as "貸出相手", status.name as "状態"
+SELECT rental.id as "貸出ID", rental.number as "貸出番号", rental.date as "貸出日", disk.name as "ディスクタイトル", friend.name as "貸出相手", status.name as "状態"
 FROM rental
 INNER JOIN disk
         ON disk_id = disk.id
@@ -96,7 +96,9 @@ INNER JOIN friend
         ON friend_id = friend.id
 INNER JOIN status
         ON status_id = status.id
-WHERE status.id = "0";
+WHERE status.id = "0"
+ORDER BY rental.status_id desc;
+
 
 
 -- --- DANGER ZONE ---
