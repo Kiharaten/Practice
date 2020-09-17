@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ST31 Androidサンプル04 割り算計算機
+res/values/string.xmlファイル
+-->
+<resources>
+    <string name="app_name">BMI計算</string>
+    <string name="data_height">身長</string>
+    <string name="data_weight">体重</string>
+<!--    <string name="tv_nume">分子を入力してください</string>-->
+<!--    <string name="tv_denomi">分母を入力してください</string>-->
+    <string name="bt_calc">割算</string>
+    <string name="bt_clear">クリア</string>
+</resources>
+
+    <!--<resources>-->
+    <!--    <string name="app_name">CalcDivideSample</string>-->
+    <!--</resources>-->
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--&lt;!&ndash;-->
+<!--ST31 Android課題04 BMI計算アプリ作成-->
+<!--res/values/string.xmlファイル-->
+<!--&ndash;&gt;-->
+<!--<resources>-->
+<!--    <string name="app_name">BMI計算アプリ</string>-->
+<!--    <string name="data_height">身長</string>-->
+<!--    <string name="data_weight">体重</string>-->
+<!--    <string name="data_male">男性</string>-->
+<!--    <string name="data_female">女性</string>-->
+<!--    <string name="data_result">あなたのBMI</string>-->
+<!--    <string name="button_calc">計算</string>-->
+<!--    <string name="button_clear">クリア</string>-->
+<!--    <string name="over_25_1">肥満です。体重</string>-->
+<!--    <string name="bet_18_25">ちょうどいいです。現状を維持しましょう。</string>-->
+<!--    <string name="below_18_1">やせています。体重</string>-->
+<!--    <string name="closing_2">kgを目指しましょう。</string>-->
+<!--    <string name="unit_old">歳</string>-->
+<!--    <string name="unit_weight">kg</string>-->
+<!--    <string name="unit_height">cm</string>-->
+<!--</resources>-->
