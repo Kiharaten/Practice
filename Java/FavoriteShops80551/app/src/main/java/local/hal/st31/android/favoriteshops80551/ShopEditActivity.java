@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -69,6 +70,7 @@ public class ShopEditActivity extends AppCompatActivity {
             btnSave.setText(R.string.btn_insert);
 
             Button btnDelete = findViewById(R.id.btnDelete);
+            // 不可視の呪文INVISIBLE...!
             btnDelete.setVisibility(View.INVISIBLE);
         }
         else {
@@ -90,73 +92,62 @@ public class ShopEditActivity extends AppCompatActivity {
         }
     }
 
+    public boolean onOptionsItemSelected(MenuItem item) {
+        boolean returnVal = true;
+        int itemId = item.getItemId();
+        if (itemId == R.id.btnSave) {
+            EditText etInputName = findViewById(R.id.etInputName);
+            String inputName = etInputName.getText().toString();
+            if(inputName.equals("")) {
+                Toast.makeText(ShopEditActivity.this, R.string.msg_input_name, Toast.LENGTH_SHORT).show();
+            }
+            else {
+                EditText etInputTel = findViewById(R.id.etInputTel);
+                String inputTel = etInputTel.getText().toString();
+
+                EditText etInputUrl = findViewById(R.id.etInputUrl);
+                String inputUrl = etInputUrl.getText().toString();
+
+                EditText etInputNote = findViewById(R.id.etInputNote);
+                String inputNote = etInputNote.getText().toString();
+
+                SQLiteDatabase db = _helper.getWritableDatabase();
+
+                if(_mode == MainActivity.MODE_INSERT) {
+                    DataAccess.insert(db, inputName, inputTel, inputUrl, inputNote);
+                }
+                else {
+                    DataAccess.update(db, _idNo, inputName, inputTel, inputUrl, inputNote);
+                }
+                finish();
+            }
+        }
+        else if (itemId == R.id.btnBack) {
+            finish();
+        }
+        else if (itemId == R.id.btnDelete) {
+            // 2020/09/10 FavoriteShops改造1にて無効化:開始ポイント
+//        SQLiteDatabase db = _helper.getWritableDatabase();
+//        DataAccess.delete(db, _idNo);
+            // 2020/09/10 FavoriteShops改造1にて無効化:終了ポイント
+
+            // 2020/09/10 FavoriteShops改造1にて追加:開始ポイント
+            DeleteDialogFragment dialog = new DeleteDialogFragment();
+            FragmentManager manager = getSupportFragmentManager();
+            dialog.show(manager, "DeleteDialogFragment");
+            // 2020/09/10 FavoriteShops改造1にて追加:終了ポイント
+
+            // 2020/09/10 FavoriteShops改造1にて無効化:開始ポイント
+//        finish();
+            // 2020/09/10 FavoriteShops改造1にて無効化:終了ポイント
+
+        }
+        return returnVal;
+    }
+
     @Override
     protected void onDestroy() {
         _helper.close();
         super.onDestroy();
-    }
-
-    /**
-     * 登録・更新ボタンが押されたときのイベント処理用メソッド。
-     *
-     * @param view 画面部品。
-     */
-    public void onSaveButtonClick(View view) {
-        EditText etInputName = findViewById(R.id.etInputName);
-        String inputName = etInputName.getText().toString();
-        if(inputName.equals("")) {
-            Toast.makeText(ShopEditActivity.this, R.string.msg_input_name, Toast.LENGTH_SHORT).show();
-        }
-        else {
-            EditText etInputTel = findViewById(R.id.etInputTel);
-            String inputTel = etInputTel.getText().toString();
-
-            EditText etInputUrl = findViewById(R.id.etInputUrl);
-            String inputUrl = etInputUrl.getText().toString();
-
-            EditText etInputNote = findViewById(R.id.etInputNote);
-            String inputNote = etInputNote.getText().toString();
-
-            SQLiteDatabase db = _helper.getWritableDatabase();
-
-            if(_mode == MainActivity.MODE_INSERT) {
-                DataAccess.insert(db, inputName, inputTel, inputUrl, inputNote);
-            }
-            else {
-                DataAccess.update(db, _idNo, inputName, inputTel, inputUrl, inputNote);
-            }
-            finish();
-        }
-    }
-
-    /**
-     * 戻るボタンが押されたときのイベント処理用メソッド。
-     *
-     * @param view 画面部品。
-     */
-    public void onBackButtonClick(View view) {
-        finish();
-    }
-
-    /**
-     * 削除ボタンが押されたときのイベント処理用メソッド。
-     *
-     * @param view 画面部品。
-     */
-    public void onDeleteButtonClick(View view) {
-        // 2020/09/10 FavoriteShops改造1にて無効化:開始ポイント
-//        SQLiteDatabase db = _helper.getWritableDatabase();
-//        DataAccess.delete(db, _idNo);
-        // 2020/09/10 FavoriteShops改造1にて無効化:終了ポイント
-
-        // 2020/09/10 FavoriteShops改造1にて追加:開始ポイント
-        DeleteDialogFragment dialog = new DeleteDialogFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        dialog.show(manager, "DeleteDialogFragment");
-        // 2020/09/10 FavoriteShops改造1にて追加:終了ポイント
-
-        // 2020/09/10 FavoriteShops改造1にて無効化:開始ポイント
-//        finish();
-        // 2020/09/10 FavoriteShops改造1にて無効化:終了ポイント
     }
 }

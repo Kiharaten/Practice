@@ -15,14 +15,14 @@ ST31 Androidサンプル12 メモ帳アプリ
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:onClick="onBackButtonClick"
-            android:text="@string/btn_back"
-            android:textSize="20sp"/>
+<!--        <Button-->
+<!--            android:id="@+id/btnBack"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="left"-->
+<!--            android:onClick="onBackButtonClick"-->
+<!--            android:text="@string/btn_back"-->
+<!--            android:textSize="20sp"/>-->
 
         <TextView
             android:id="@+id/tvNameEdit"
