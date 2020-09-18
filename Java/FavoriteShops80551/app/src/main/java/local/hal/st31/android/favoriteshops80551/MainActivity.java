@@ -11,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
@@ -49,6 +50,18 @@ public class MainActivity extends AppCompatActivity {
         _lvShopList.setOnItemClickListener(new ListItemClickListener());
 
         _helper = new DatabaseHelper(getApplicationContext());
+
+//        Button btnDelete = findViewById(R.id.btnDelete);
+//        // 不可視の呪文INVISIBLE...!
+//        btnDelete.setVisibility(View.INVISIBLE);
+//
+//        Button btnSave = findViewById(R.id.btnSave);
+//        // 不可視の呪文INVISIBLE...!
+//        btnSave.setVisibility(View.INVISIBLE);
+//
+//        Button btnBack = findViewById(R.id.btnBack);
+//        // 不可視の呪文INVISIBLE...!
+//        btnBack.setVisibility(View.INVISIBLE);
     }
 
     // 2020/09/17 FavoriteShops改造2にて追加:開始ポイント

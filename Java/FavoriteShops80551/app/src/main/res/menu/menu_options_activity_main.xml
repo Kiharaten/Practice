@@ -10,13 +10,13 @@ res/menu/menu_options/activity_main.xmlファイル
     <item
         android:id="@+id/btnBack"
         android:icon="@android:drawable/ic_menu_revert"
-        android:onClick="onBackButtonClick"
+
         android:title="@string/btn_back"
         app:showAsAction="always" />
     <item
         android:id="@+id/btnDelete"
         android:icon="@android:drawable/ic_menu_delete"
-        android:onClick="onDeleteButtonClick"
+
         android:title="@string/btn_delete"
         app:showAsAction="always" />
     <item
@@ -27,7 +27,7 @@ res/menu/menu_options/activity_main.xmlファイル
     <item
         android:id="@+id/btnSave"
         android:icon="@android:drawable/ic_menu_save"
-        android:onClick="onSaveButtonClick"
+
         android:title="@string/btn_save"
         app:showAsAction="always" />
 </menu>
