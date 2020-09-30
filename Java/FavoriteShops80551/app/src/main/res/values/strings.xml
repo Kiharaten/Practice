@@ -27,14 +27,14 @@ res/values/string.xmlファイル
     <string name="dlg_btn_ng">キャンセル</string>
    <string name="dlg_simple_toast">削除しました</string>
 
-    <string name="menu_reset">リセット</string>
-    <string name="menu_fonttype">フォント</string>
-    <string name="menu_fonttype_serif">明朝体</string>
-    <string name="menu_fonttype_sansserif">ゴシック体</string>
-    <string name="menu_fonttype_monospace">等幅</string>
-    <string name="menu_fontstyle">字体</string>
-    <string name="menu_fontstyle_normal">標準</string>
-    <string name="menu_fontstyle_italic">斜体</string>
-    <string name="menu_fontstyle_bold">太字</string>
-    <string name="menu_fontstyle_bolditalic">斜体太字</string>
+<!--    <string name="menu_reset">リセット</string>-->
+<!--    <string name="menu_fonttype">フォント</string>-->
+<!--    <string name="menu_fonttype_serif">明朝体</string>-->
+<!--    <string name="menu_fonttype_sansserif">ゴシック体</string>-->
+<!--    <string name="menu_fonttype_monospace">等幅</string>-->
+<!--    <string name="menu_fontstyle">字体</string>-->
+<!--    <string name="menu_fontstyle_normal">標準</string>-->
+<!--    <string name="menu_fontstyle_italic">斜体</string>-->
+<!--    <string name="menu_fontstyle_bold">太字</string>-->
+<!--    <string name="menu_fontstyle_bolditalic">斜体太字</string>-->
 </resources>

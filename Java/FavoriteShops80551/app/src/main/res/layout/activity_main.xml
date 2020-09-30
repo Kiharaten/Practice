@@ -24,12 +24,12 @@ ST31 Androidサンプル12 メモ帳アプリ
             android:text="@string/tv_title_list"
             android:textSize="35sp"/>
 
-        <Button
-            android:id="@+id/btnNew"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onNewButtonClick"
-            android:text="@string/btn_new"/>
+<!--        <Button-->
+<!--            android:id="@+id/btnNew"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:onClick="onNewButtonClick"-->
+<!--            android:text="@string/btn_new"/>-->
     </LinearLayout>
     <TextView
         android:layout_width="match_parent"

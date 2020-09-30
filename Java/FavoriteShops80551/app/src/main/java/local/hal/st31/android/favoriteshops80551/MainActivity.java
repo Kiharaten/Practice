@@ -8,8 +8,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
@@ -48,6 +50,18 @@ public class MainActivity extends AppCompatActivity {
         _lvShopList.setOnItemClickListener(new ListItemClickListener());
 
         _helper = new DatabaseHelper(getApplicationContext());
+
+//        Button btnDelete = findViewById(R.id.btnDelete);
+//        // 不可視の呪文INVISIBLE...!
+//        btnDelete.setVisibility(View.INVISIBLE);
+//
+//        Button btnSave = findViewById(R.id.btnSave);
+//        // 不可視の呪文INVISIBLE...!
+//        btnSave.setVisibility(View.INVISIBLE);
+//
+//        Button btnBack = findViewById(R.id.btnBack);
+//        // 不可視の呪文INVISIBLE...!
+//        btnBack.setVisibility(View.INVISIBLE);
     }
 
     // 2020/09/17 FavoriteShops改造2にて追加:開始ポイント
@@ -61,6 +75,17 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu_options_activity_main, menu);
 
         return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        boolean returnVal = true;
+        int itemId = item.getItemId();
+        if (itemId == R.id.btnNew) {
+            Intent intent = new Intent(getApplicationContext(), ShopEditActivity.class);
+            intent.putExtra("mode", MODE_INSERT);
+            startActivity(intent);
+        }
+        return returnVal;
     }
     // 2020/09/17 FavoriteShops改造2にて追加:終了ポイント
 
@@ -79,17 +104,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         _helper.close();
         super.onDestroy();
-    }
-
-    /**
-     * 新規ボタンが押されたときのイベント処理用メソッド。
-     *
-     * @param view 画面部品。
-     */
-    public void onNewButtonClick(View view) {
-        Intent intent = new Intent(getApplicationContext(), ShopEditActivity.class);
-        intent.putExtra("mode", MODE_INSERT);
-        startActivity(intent);
     }
 
     /**
