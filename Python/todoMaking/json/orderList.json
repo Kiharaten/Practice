@@ -1,0 +1,11 @@
+{
+    "orderList":{
+        "help": "show command list",
+        "make": "create new task",
+        "check": "check your tasks",
+        "edit": "replace your task",
+        "end": "terminate this command line"
+    }
+}
+
+// jsonの書き方について tohoho-web.com/ex/json.html
