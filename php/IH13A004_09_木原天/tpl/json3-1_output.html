@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JSON3-1</title>
+<body>
+<script src="../js/jquery-3.4.1.min.js"></script>
+
+<h1>JSON3-1(Javascript -> PHP => Javascript)</h1>
+
+<p>取得件数
+    <select name="number">
+        <option value="">選択してください</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <button id="button">ボタン</button><br><br>
+</p>
+​
+JSで作成した連想配列をJSON化(JSON.stringify):<br><div id="output1"></div><hr>
+ステータスコード:<br><div id="statuscode"></div><hr>
+PHPから受信した値を出力:<br><div id="output2"></div><hr>
+PHPから受信した値をParse(JSON.parse)した値:<br><div id="output3"></div><br>
+
+
+<script>
+
+$(function(){
+
+    $('#button').click(function(){
+
+    $("#output1").empty();
+    $("#output2").empty();
+    $("#output3").empty();
+    $("#statuscode").empty();
+
+    var number = $('select[name=number]').val();
+
+    $.ajax({
+        type: "GET",
+        url: "../php/json3-1.php",
+        data:{
+         number : number
+        }
+    }).done(function( data, msg, status, xhr){//ステータスコード200ならdoneに入る
+        console.log("success");
+        console.log("msg = " + msg);
+        console.log("status = " + status);
+        console.log("xhr = " + xhr);
+
+        var get_json = JSON.parse(data);
+        $("#output2").append(data);
+        $("#statuscode").append("200");
+        var length = get_json.length;
+        var i = 0;
+
+        // for(var i=0;i<get_json.length;i++){
+        //     item = get_json[i];
+        //     for(key in item){
+        //         $("#output3").append("key:" + key + " ");
+        //         $("#output3").append("value:" + item[key] + "<br>");
+        //     }
+        //     $("#output3").append("<hr>");
+        // }
+
+        while(i < length){
+            var elem = get_json[i];
+            for(var key in elem){
+                    $("#output3").append("キー:" + key + " ");
+                    $("#output3").append("値:" + elem[key] +"<br/>");
+            }
+            $("#output3").append("<hr>");
+            i++;
+        }
+
+    }).fail(function(xhr, status, error){
+        if(xhr.status===400){
+            $("#statuscode").append("範囲外です<br/>");
+            $("#statuscode").append(xhr.status);
+        }
+    }).always(function(xhr, status){
+        console.log("fin");
+    });
+
+
+    })
+});
+
+</script>
+
+</body>
+</html>

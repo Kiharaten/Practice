@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JSON2-1</title>
+    <!-- BootstrapのCSS読み込み -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+<script src="../js/jquery-3.4.1.min.js"></script>
+
+<h1>JSON2-1</h1>
+
+<button id="button">ボタン</button><br><br>
+JSで作成した連想配列をJSON化(JSON.stringify):<br><div id="output1"></div><hr>
+PHPから受信した値を出力:<br><div id="output2"></div><hr>
+PHPから受信した値をParse(JSON.parse)した値:<br><div id="output3"></div><br>
+
+
+<script>
+
+$(function(){
+
+	$('#button').click(function(){
+
+	$.ajax({
+		type: "GET",
+		url: "../php/json2-1.php"
+	}).done(function(data){
+		var get_json = JSON.parse(data);
+		// console.log(data);
+		// console.log(get_json);
+		$("#output2").append(data);
+		for(var key in get_json){
+			$("#output3").append("key:" + key + " ");
+			$("#output3").append("value:" + get_json[key] +"<br/>")
+		}
+	}).fail(function(xhr){
+		alert('エラー')
+	});
+
+	})
+});
+
+</script>
+
+</body>
+</html>
