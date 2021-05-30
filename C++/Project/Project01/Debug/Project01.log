@@ -1,6 +1,0 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: 中間ディレクトリ (Debug\) に別のプロジェクト (Project01.vcxproj) と共有されているファイルが含まれています。これにより、クリーンしてリビルド動作が適切に行われない可能性があります。
-  Practice01.cpp
-  Practice02.cpp
-  main.cpp
-  コードを生成中...
-  Project01.vcxproj -> \\Mac\Home\Documents\practice\C++\Project01\Debug\SampleProject.exe
