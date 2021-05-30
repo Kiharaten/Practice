@@ -25,7 +25,7 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="Practice01.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
