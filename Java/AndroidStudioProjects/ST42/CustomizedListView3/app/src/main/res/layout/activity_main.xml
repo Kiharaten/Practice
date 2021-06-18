@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ST42 AndroidSample 04 DBデータに応じたリストビューのカスタマイズ
+画面表示用レイアウトファイル
+
+file name = activity_main.xml
+-->
+<ListView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lvPhones"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
