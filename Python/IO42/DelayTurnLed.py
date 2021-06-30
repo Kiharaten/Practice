@@ -18,9 +18,12 @@ def countSec(second,  type):
             time.sleep(0.1)
             cnt = cnt + 1
         else:
+            print("count stop")
             if timer <= cnt: # 正常終了の場合True, 異常終了の場合Falseを返す
+                print("return True")
                 return True
             else:
+                print("return False")
                 return False
 
     elif type == "OFF":
@@ -31,8 +34,10 @@ def countSec(second,  type):
         else:       
             print("count stop")
             if timer < cnt: # 正常終了の場合False, 異常終了の場合TTrueを返す            
+                print("return False")
                 return False         
             else:   
+                print("return True")
                 return True          
 
     else:           
