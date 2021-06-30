@@ -33,7 +33,7 @@ def countSec(second,  type):
             cnt = cnt + 1
         else:       
             print("count stop")
-            if timer < cnt: # 正常終了の場合False, 異常終了の場合TTrueを返す            
+            if timer <= cnt: # 正常終了の場合False, 異常終了の場合TTrueを返す            
                 print("return False")
                 return False         
             else:   
