@@ -1,4 +1,4 @@
-# coding:utf-8
+#!/usr/bin/python3
 from gpiozero import MCP3008
 import RPi.GPIO as GPIO
 import time
