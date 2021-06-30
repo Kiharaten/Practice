@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ST31 Androidサンプル08 インテントからの返却
+res/values/string.xmlファイル
+-->
+<resources>
+    <string name="app_name">人物評価</string>
+    <string name="tv_name">お名前を入力してください。</string>
+    <string name="bt_rating_evaluate">星で評価</string>
+    <string name="bt_seek_evaluate">スライダーで評価</string>
+    <string name="bt_previous">評価</string>
+</resources>
