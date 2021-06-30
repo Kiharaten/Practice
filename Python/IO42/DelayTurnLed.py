@@ -64,7 +64,7 @@ while True:
 
     elif not GPIO.input(SW):
         flg = countSec(2, "OFF")
-        if flg:
+        if not flg:
             GPIO.output(LED, flg)
             print("switch-OFF")
         else:
