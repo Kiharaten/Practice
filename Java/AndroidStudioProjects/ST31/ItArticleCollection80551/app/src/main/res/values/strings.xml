@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">共有IT記事</string>
+
+    <!-- Main画面表示用 -->
+    <string name="tv_main_pagename">記事リスト</string>
+    <string name="tv_title">タイトルを入力してください。</string>
+    <string name="tv_url">URLを入力してください。</string>
+    <string name="tv_comment">コメントを入力してください。</string>
+    
+    <!-- 追加画面表示用 -->
+    <string name="tv_add_pagename">記事登録</string>
+    <string name="tv_add_title">タイトル</string>
+    <string name="tv_add_url">URL</string>
+    <string name="tv_add_comment">コメント</string>
+
+    <!-- プレースホルダ用 -->
+    <string name="tv_add_place_title">タイトルを入力してください。</string>
+    <string name="tv_add_place_url">URLを入力してください。</string>
+    <string name="tv_add_place_comment">コメントを入力してください。</string>
+
+    <!-- 入力バリデーション用 -->
+    <string name="tv_add_check_title">タイトルが未入力です。</string>
+    <string name="tv_add_check_url">URLが未入力です。</string>
+    <string name="tv_add_check_comment">コメントが未入力です。</string>
+
+    <!-- 詳細画面表示用 -->
+    <string name="tv_detail_pagename">記事詳細</string>
+    <string name="tv_detail_id">ID:</string>
+    <string name="tv_detail_title">タイトル:</string>
+    <string name="tv_detail_url">URL:</string>
+    <string name="tv_detail_comment">コメント:</string>
+    <string name="tv_detail_student">投稿者情報</string>
+    <string name="tv_detail_datetime">投稿日時:</string>
+    <string name="tv_detail_studentid">学籍番号:</string>
+    <string name="tv_detail_seatno">出席番号:</string>
+    <string name="tv_detail_name">投稿者名:</string>
+
+    <!-- ダイアログ表示用 -->
+    <string name="dlg_msg_name">名前：</string>
+    <string name="dlg_msg_studentid">学籍番号：</string>
+    <string name="dlg_msg_seatno">出席番号：</string>
+    <string name="dlg_msg_status">status：</string>
+    <string name="dlg_msg_msg">msg：</string>
+    <string name="dlg_msg_serialno">シリアル番号：</string>
+    <string name="dlg_msg_timestamp">データ登録日時：</string>
+    <string name="dlg_msg_title">タイトル:</string>
+    <string name="dlg_msg_url">URL:</string>
+    <string name="dlg_msg_comment">コメント:</string>
+
+    <!-- エラーハンドリング用 -->
+    <string name="msg_err_send">サーバ通信に失敗しました。</string>
+
+    <!-- ダイアログの閉じるボタン -->
+    <string name="tv_ok_button">OK</string>
+</resources>
