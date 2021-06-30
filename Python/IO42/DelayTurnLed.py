@@ -13,24 +13,35 @@ def countSec(second,  type):
     timer = second * 10
 
     if type == "ON":
-        logic = 1
-    elif type == "OFF":
-        logic = not
-    else:
-        return "type error"
-
-    print("\ntype={0}, count timer={1} start".format(type, timer))
-    while logic and GPIO.input(SW) and cnt < timer: # 0.1秒刻みで押している時間を数える
-        time.sleep(0.1)
-        cnt = cnt + 1
-    else:
-        print("count stop")
-        if timer <= cnt: # 正常終了の場合True, 異常終了の場合Falseを返す
-            print("return True")
-            return True
+        print("\ntype={0}, count timer={1} start".format(type, timer))
+        while GPIO.input(SW) and cnt < timer: # 0.1秒刻みで押している時間を数える
+            time.sleep(0.1)
+            cnt = cnt + 1
         else:
-            print("return False")
-            return False
+            print("count stop")
+            if timer <= cnt: # 正常終了の場合True, 異常終了の場合Falseを返す
+                print("return True")
+                return True
+            else:
+                print("return False")
+                return False
+
+    elif type == "OFF":
+        print("\ntype={0}, count timer={1} start".format(type,timer))
+        while not GPIO.input(SW) and cnt < timer: # 0.1秒刻みで離している時間を数える
+            time.sleep(0.1)
+            cnt = cnt + 1
+        else:       
+            print("count stop")
+            if timer <= cnt: # 正常終了の場合False, 異常終了の場合TTrueを返す            
+                print("return False")
+                return False         
+            else:   
+                print("return True")
+                return True          
+
+    else:           
+        return "tyle error"
 
 GPIO.setwarnings(False) 
 GPIO.setmode(GPIO.BCM)
@@ -53,8 +64,8 @@ while True:
 
     elif not GPIO.input(SW):
         flg = countSec(2, "OFF")
-        if flg:
-            GPIO.output(LED, not flg)
+        if not flg:
+            GPIO.output(LED, flg)
             print("switch-OFF")
         else:
             print("timeout")
