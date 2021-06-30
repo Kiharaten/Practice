@@ -69,6 +69,5 @@ while True:
             print("switch-OFF")
         else:
             print("timeout")
-    time.sleep(0.1)
-
+            
 GPIO.cleanup()
