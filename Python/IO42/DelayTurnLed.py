@@ -12,10 +12,12 @@ def countSec(second,  type):
     cnt = 0
     timer = second * 10
 
-    if type = "ON":
+    if type == "ON":
         logic = 1 and
-    else:
+    elif type == "OFF":
         logic = not
+    else:
+        return "type error"
 
     print("\ntype={0}, count timer={1} start".format(type, timer))
     while GPIO.input(SW) and cnt < timer: # 0.1秒刻みで押している時間を数える
@@ -28,10 +30,7 @@ def countSec(second,  type):
             return True
         else:
             print("return False")
-            return False         
-
-    else:           
-        return "tyle error"
+            return False
 
 GPIO.setwarnings(False) 
 GPIO.setmode(GPIO.BCM)
