@@ -55,7 +55,7 @@ GPIO.setup(LED, GPIO.OUT, initial = False)
 #ループ
 while True:
     if GPIO.input(SW):
-#        flg = countSec(3, "ON")
+        flg = countSec(3, "ON")
         if flg:
             GPIO.output(LED, flg)
             print("switch-ON")
@@ -65,7 +65,7 @@ while True:
     elif not GPIO.input(SW):
         flg = countSec(2, "OFF")
         if flg:
-#            GPIO.output(LED, flg)
+            GPIO.output(LED, flg)
             print("switch-OFF")
         else:
             print("timeout")
