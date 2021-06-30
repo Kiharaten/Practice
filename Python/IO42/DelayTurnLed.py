@@ -41,7 +41,7 @@ def countSec(second,  type):
                 return True          
 
     else:           
-        return "tyle error"
+        return "type error"
 
 GPIO.setwarnings(False) 
 GPIO.setmode(GPIO.BCM)
