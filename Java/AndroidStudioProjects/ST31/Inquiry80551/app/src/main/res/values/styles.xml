@@ -1,0 +1,35 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:textColorPrimary">#ffffff</item>
+    </style>
+</resources>
+
+<!--<resources>-->
+<!--    &lt;!&ndash; Base application theme. &ndash;&gt;-->
+<!--    <style name="AppThemeML" parent="@android:style/Theme.Material.Light">-->
+<!--        <item name="android:colorPrimary">#bdbdbd</item>-->
+<!--        <item name="android:colorPrimaryDark">#757575</item>-->
+<!--        <item name="android:navigationBarColor">#000000</item>-->
+<!--        <item name="android:windowBackground">#eeeeee</item>-->
+<!--        <item name="android:textColorPrimary">#000000</item>-->
+<!--        <item name="android:colorAccent">#009385</item>-->
+<!--    </style>-->
+<!--</resources>-->
+
+<!--<resources>-->
+
+<!--    &lt;!&ndash; Base application theme. &ndash;&gt;-->
+<!--    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+<!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+<!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+<!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+<!--        <item name="colorAccent">@color/colorAccent</item>-->
+<!--    </style>-->
+
+<!--</resources>-->

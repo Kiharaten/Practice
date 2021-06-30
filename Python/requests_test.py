@@ -2,6 +2,7 @@ import requests
 
 # url = requests.get('https://news.yahoo.co.jp')
 # main_params = '東北ずん子'
+# sub_params = 'クズん子'
 
 # param = 'p=' + main_params + '+' + sub_params
 # r = requests.get(url,params=param)

@@ -1,0 +1,23 @@
+@charset "UTF-8";
+#details p,
+#details p img,
+#verification_buying p,
+#verification_buying p img,
+#done_buying .product_image,
+#done_buying .product_image img,
+#done_exhibits #product_image,
+#done_exhibits #product_image img {
+    width: 100%;
+}
+
+#details #back {
+    border: 1px solid #000;
+}
+
+#details #confirm {
+    font-size: 1.3em;
+    border: 1px solid #B37212;
+    background: #FF9900;
+    color: #FFF;
+    border-radius: 10px;
+}

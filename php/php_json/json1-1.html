@@ -1,0 +1,19 @@
+<html>
+<body>
+
+<h1>JSON1-1</h1>
+
+<div id = "output1"></div>
+<hr>
+<div id = "output2"></div>
+
+<script>
+const value = [1, 1, 2, 3, 5, 8, 13];
+console.log(JSON.stringify(value));
+document.getElementById('output1').innerHTML = JSON.stringify(value);
+document.getElementById('output2').innerHTML = JSON.parse(JSON.stringify(value));
+console.log(typeof JSON.parse(JSON.stringify(value)));
+</script>
+
+</body>
+</html>
