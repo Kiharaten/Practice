@@ -13,7 +13,7 @@ def countSec(second,  type):
     timer = second * 10
 
     if type == "ON":
-        print("type=ON, count start")
+        print("type=ON, count timer={0} start".format(timer))
         while GPIO.input(SW) and cnt < timer: # 0.1秒刻みで押している時間を数える
             time.sleep(0.1)
             cnt = cnt + 1
@@ -27,7 +27,7 @@ def countSec(second,  type):
                 return False
 
     elif type == "OFF":
-        print("type=OFF, count start")
+        print("type=OFF, count timer={0} start".format(timer))
         while not GPIO.input(SW) and cnt < timer: # 0.1秒刻みで離している時間を数える
             time.sleep(0.1)
             cnt = cnt + 1
@@ -55,7 +55,7 @@ GPIO.setup(LED, GPIO.OUT, initial = False)
 #ループ
 while True:
     if GPIO.input(SW):
-        flg = countSec(3, "ON")
+#        flg = countSec(3, "ON")
         if flg:
             GPIO.output(LED, flg)
             print("switch-ON")
@@ -65,9 +65,10 @@ while True:
     elif not GPIO.input(SW):
         flg = countSec(2, "OFF")
         if flg:
-            GPIO.output(LED, flg)
+#            GPIO.output(LED, flg)
             print("switch-OFF")
         else:
             print("timeout")
+    time.sleep(0.1)
 
 GPIO.cleanup()
