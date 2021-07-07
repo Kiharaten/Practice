@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * 再開処理
+     * 開始処理
      */
     @Override
     protected void onResume() {
@@ -130,15 +130,6 @@ public class MainActivity extends AppCompatActivity {
                 editor.putInt("settings", ALL);
                 break;
         }
-
-//        SQLiteDatabase db = _helper.getWritableDatabase();
-//        Cursor cursor = DataAccess.findUnfinished(db);
-//        if(_menuCategory == FINISHED){
-//            cursor = DataAccess.findFinished(db);
-//        }
-//        if(_menuCategory == ALL){
-//            cursor = DataAccess.findAll(db);
-//        }
 
         editor.apply();
         SimpleCursorAdapter adapter = (SimpleCursorAdapter) _lvToDoList.getAdapter();
@@ -245,6 +236,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 追加ボタン用イベント処理メソッド。
+     */
+    public void onAddButtonClick(View view){
+        Intent intent = new Intent(getApplicationContext(), ToDoEditActivity.class);
+        intent.putExtra("mode", MODE_INSERT);
+        startActivity(intent);
+    }
+
     //*************** アクションバー関連 ********************
     /**
      * アクションバーのR値インフレート
@@ -297,9 +297,9 @@ public class MainActivity extends AppCompatActivity {
                 _menuCategory = UNFINISHED;
                 break;
 
-            case R.id.addButton:
-                onAddButtonClick();
-                break;
+//            case R.id.addButton:
+//                onAddButtonClick();
+//                break;
             default:
                 returnVal = super.onOptionsItemSelected(item);
         }
@@ -315,9 +315,9 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 追加ボタン用イベント処理メソッド。
      */
-    public void onAddButtonClick(){
-        Intent intent = new Intent(getApplicationContext(), ToDoEditActivity.class);
-        intent.putExtra("mode", MODE_INSERT);
-        startActivity(intent);
-    }
+//    public void onAddButtonClick(){
+//        Intent intent = new Intent(getApplicationContext(), ToDoEditActivity.class);
+//        intent.putExtra("mode", MODE_INSERT);
+//        startActivity(intent);
+//    }
 }    

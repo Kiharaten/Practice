@@ -1,4 +1,4 @@
-#Wed Jul 07 15:15:58 JST 2021
+#Wed Jul 07 17:17:51 JST 2021
 base.0=/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
