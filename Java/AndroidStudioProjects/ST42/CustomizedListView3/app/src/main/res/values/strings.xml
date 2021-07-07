@@ -1,0 +1,7 @@
+<!--
+ST42 AndroidSample 04 DBデータに応じたリストビューカスタマイズ
+res/values/string.xml file
+-->
+<resources>
+    <string name="app_name">電話チェックリスト</string>
+</resources>

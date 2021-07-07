@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menuListOption"
+        android:icon="@android:drawable/ic_menu_more"
+        android:title="新規"
+        app:showAsAction="always|withText">
+
+        <item
+            android:id="@+id/menuListOptionTitle"
+            android:title="@string/menu_main_unfinished"
+            app:showAsAction="always">
+            <menu>
+                <item
+                    android:id="@+id/menuListOptionUnfinished"
+                    android:title="@string/menu_main_unfinished"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/menuListOptionFinished"
+                    android:title="@string/menu_main_finished"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/menuListOptionAll"
+                    android:title="@string/menu_main_all"
+                    app:showAsAction="never" />
+            </menu>
+        </item>
+
+        <item
+            android:id="@+id/addButton"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="タスク登録"
+            app:showAsAction="always|withText" />
+    </item>
+</menu>
