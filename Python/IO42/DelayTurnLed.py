@@ -2,18 +2,17 @@
 import RPi.GPIO as GPIO
 import time
 
-def countSec(second, type):
+def countSec(timer, type):
     """
     指定した秒数を0.1秒刻みで数える
     正常終了したかどうかでTrue or Falseを返す
    
-    第一引数:秒数(sec), 第二引数:判定(1 or 0)
+    第一引数:秒数(sec * 10), 第二引数:判定(1 or 0)
     """
     cnt = 0
-    timer = second * 10
 
     print("\ntype={0}, count timer={1} start".format(type, timer))
-    while GPIO.input(SW) == type and cnt < timer: # 0.1秒刻みで押している時間を数える
+    while GPIO.input(SW) == type and cnt <= timer: # 0.1秒刻みで押している時間を数える
         print("gpio true ={0}".format(GPIO.input(SW)))
         time.sleep(0.1)
         cnt = cnt + 1
@@ -38,13 +37,13 @@ GPIO.setup(LED, GPIO.OUT, initial = False)
 
 while True:
     if GPIO.input(SW):
-        flg = countSec(3, 1) # 3秒間GPIO.inputに1が入り続けるとTrueを返す
+        flg = countSec(30, 1) # 3秒間GPIO.inputに1が入り続けるとTrueを返す
         if flg:
             GPIO.output(LED, True)
             print("switch-ON")
 
     elif not GPIO.input(SW):
-        flg = countSec(2, 0) # 2秒間GPIO.inputに0が入り続けるとTrueを返す
+        flg = countSec(20, 0) # 2秒間GPIO.inputに0が入り続けるとTrueを返す
         if flg:
             GPIO.output(LED, False)
             print("switch-OFF")
