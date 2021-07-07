@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">ToDo</string>
+
+    <string name="tv_main_pagename">タスクリスト</string>
+    <string name="tv_main_deadline">期限：</string>
+
+    <string name="tv_to_do_add_pagename">タスク情報登録</string>
+    <string name="tv_to_do_edit_pagename">タスク情報編集</string>
+
+    <string name="tv_to_do_edit_name">タスク名:</string>
+    <string name="tv_to_do_edit_deadline">期限:</string>
+    <string name="tv_to_do_edit_calendar">カレンダーから選択</string>
+    <string name="tv_to_do_edit_done">完了タスク:</string>
+    <string name="tv_to_do_edit_note">詳細:</string>
+
+    <!-- dialog -->
+    <string name="dialog_title">削除の確認</string>
+    <string name="dialog_message">このタスクを削除します。よろしいですか？</string>
+    <string name="dialog_positive">削除</string>
+    <string name="dialog_negative">キャンセル</string>
+
+    <!-- toast -->
+    <string name="toast_empty">タスク名が空白です。</string>
+
+    <!-- menu -->
+    <string name="menu_main">絞り込み</string>
+    <string name="menu_main_unfinished">未完了のタスク</string>
+    <string name="menu_main_finished">完了タスク</string>
+    <string name="menu_main_all">全てのタスク</string>
+</resources>

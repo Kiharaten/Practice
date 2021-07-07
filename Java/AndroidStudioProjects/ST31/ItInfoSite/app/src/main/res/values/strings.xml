@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ST31 Androidサンプル17 暗黙的インテント1
+res/values/string.xmlファイル
+-->
+<resources>
+    <string name="app_name">IT情報サイト</string>
+</resources>

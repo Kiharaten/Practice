@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+ST31 課題No.09 POST による DB 保存
+res/values/string.xmlファイル
+-->
+<resources>
+    <string name="app_name">Post2DB実験</string>
+    <string name="tv_lastname">名字を入力してください。</string>
+    <string name="tv_firstname">名前を入力してください。</string>
+    <string name="tv_studentid">学籍番号(数字5桁)を入力してください。</string>
+    <string name="tv_seatno">出席番号(数字2桁)を入力してください。</string>
+    <string name="tv_message">メッセージを入力してください。</string>
+    <string name="tv_comment">コメントを入力してください。</string>
+    <string name="bt_send">送信</string>
+    <string name="dlg_msg_name">名前：</string>
+    <string name="dlg_msg_studentid">学籍番号：</string>
+    <string name="dlg_msg_seatno">出席番号：</string>
+    <string name="dlg_msg_status">status：</string>
+    <string name="dlg_msg_msg">msg：</string>
+    <string name="dlg_msg_serialno">シリアル番号：</string>
+    <string name="dlg_msg_timestamp">データ登録日時：</string>
+    <string name="msg_send_before">サーバにデータを送信します。</string>
+    <string name="msg_send_after">サーバにデータを送信しました。</string>
+    <string name="msg_parse_before">サーバからの送信内容の解析を開始します。</string>
+    <string name="msg_parse_after">サーバからの送信内容の解析が終了しました。</string>
+    <string name="msg_err_send">サーバ通信に失敗しました。もう一度送信をお願いします。</string>
+    <string name="msg_err_timeout">サーバ通信がタイムアウトしました。もう一度送信をお願いします。</string>
+    <string name="msg_err_parse">サーバからの送信内容の解析に失敗しました。もう一度送信をお願いします。</string>
+</resources>
