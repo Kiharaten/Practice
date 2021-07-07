@@ -1,0 +1,22 @@
+local/hal/st42/android/todo80551/FullDialogFragment.java
+ local.hal.st42.android.todo80551.FullDialogFragment
+ local.hal.st42.android.todo80551.FullDialogFragment$1
+ local.hal.st42.android.todo80551.FullDialogFragment$DialogButtonClickListener
+local/hal/st42/android/todo80551/BuildConfig.java
+ local.hal.st42.android.todo80551.BuildConfig
+local/hal/st42/android/todo80551/DataAccess.java
+ local.hal.st42.android.todo80551.DataAccess
+local/hal/st42/android/todo80551/MainActivity.java
+ local.hal.st42.android.todo80551.MainActivity
+ local.hal.st42.android.todo80551.MainActivity$1
+ local.hal.st42.android.todo80551.MainActivity$CustomViewBinder
+ local.hal.st42.android.todo80551.MainActivity$ListItemClickListener
+ local.hal.st42.android.todo80551.MainActivity$OnCheckBoxClickListener
+local/hal/st42/android/todo80551/ToDoEditActivity.java
+ local.hal.st42.android.todo80551.ToDoEditActivity
+ local.hal.st42.android.todo80551.ToDoEditActivity$1
+ local.hal.st42.android.todo80551.ToDoEditActivity$DatePickerDialogDateSetListener
+local/hal/st42/android/todo80551/DatabaseHelper.java
+ local.hal.st42.android.todo80551.DatabaseHelper
+local/hal/st42/android/todo80551/Task.java
+ local.hal.st42.android.todo80551.Task
