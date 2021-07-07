@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JSON2-2</title>
+    <!-- BootstrapのCSS読み込み -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+	<script src="../js/jquery-3.4.1.min.js"></script>
+
+	<h1>JSON2-2(Javascript=>PHP)</h1>
+
+	<button id="button">ボタン</button><br><br>
+	JSで作成した連想配列をJSON化(JSON.stringify):<br><div id="output1"></div><hr>
+	PHPから受信した値を出力:<br><div id="output2"></div><hr>
+	PHPから受信した値をParse(JSON.parse)した値:<br><div id="output3"></div><br>
+
+	<script>
+
+	$(function(){
+
+		var ary_data = new Array(100);
+		for(var i = 0; i < ary_data.length; i++){
+			ary_data[i] = i;
+		}
+		var send_data = JSON.stringify(ary_data);
+
+		$('#button').click(function(){
+
+		$("#output1").empty();
+		$("#output2").empty();
+		$("#output3").empty();
+
+		$("#output1").append(send_data);
+
+		$.ajax({
+			type: "POST",
+			url: "../php/json2-2.php",
+			data: send_data
+		
+		}).done(function(data, msg, status, xhr){
+			console.log("success");
+			console.log("msg = " + msg);
+			console.log("status = " + status);
+			console.log("xhr = " + xhr);
+			var get_json = JSON.parse(data);
+			$("#output2").append(data);
+			for(var key in get_json){
+				$("#output3").append("キー:" + key + " ");
+				$("#output3").append("値:" + get_json[key] +"<br/>")
+			}
+		}).fail(function(xhr, status, error){
+			console.log("error");
+		}).always(function(xhr, status){
+			console.log("fin");
+		});
+
+		})
+	});
+
+	</script>
+  </body>
+</html>

@@ -1,0 +1,181 @@
+@charset "UTF-8";
+body {
+    width: 100%;
+    background: #FFFFFF;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background: #FF9900;
+}
+
+header h1 {
+    font-size: 2em;
+    height: 60px;
+    line-height: 60px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+header #back_button {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 40px;
+}
+
+header #back_button a {
+    height: 100%;
+    width: auto;
+    display: block;
+}
+
+header #back_button a img {
+    width: 100%;
+    height: 100%;
+}
+
+#enter_email_form,
+#message {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 60px);
+}
+
+#enter_email_form input {
+    width: 90%;
+    height: 40px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.3em;
+    background: #EEEEEE;
+    border-radius: 10px;
+}
+
+#enter_email_form button {
+    position: absolute;
+    width: 95%;
+    height: 50px;
+    font-size: 1.3em;
+    top: 45%;
+    left: 50%;
+    border: 1px solid #B37212;
+    background: #FF9900;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+#send_mail_message {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 330px;
+    text-align: center;
+    font-size: 1.3em;
+    color: #B0AEAA;
+}
+
+#send_mail_message span {
+    color: #000;
+}
+
+#enter_user_form {
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#enter_user_form input,
+#enter_user_form select,
+#enter_user_form button {
+    width: 90%;
+    font-size: 1.3em;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background: #EEEEEE;
+}
+
+#enter_user_form #select_gender {
+    width: 90%;
+}
+
+#enter_user_form #user_mail {
+    font-size: 1.3em;
+    height: 40px;
+}
+
+#enter_user_form .select_date {
+    width: 30%;
+}
+
+#enter_user_form #file_upload {
+    display: none;
+}
+
+#enter_user_form #file_upload_label {
+    display: block;
+    width: 90%;
+    font-size: 1.3em;
+    margin: 0 auto;
+    cursor: pointer;
+    padding: 5px 0;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background: rgba(34, 192, 255, 0.753);
+    color: #FFF;
+}
+
+#enter_user_form #file_upload_label {
+    display: block;
+}
+
+#enter_user_form button {
+    border: 1px solid #B37212;
+    background: #FF9900;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+#enter_user_form ul li:last-child {
+    margin-bottom: 40px;
+}
+
+#confirm_member_form {
+    width: 90%;
+    padding-top: 40px;
+    margin: 0 auto;
+}
+
+#confirm_member_form p {
+    width: 100%;
+    font-size: 1.5em;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#confirm_member_form p:last-of-type {
+    margin-bottom: 60px;
+}
+
+#confirm_member_form button {
+    width: 100%;
+    font-size: 1.3em;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #B37212;
+    background: #FF9900;
+    color: #FFFFFF;
+    cursor: pointer;
+}

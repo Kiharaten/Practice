@@ -1,0 +1,214 @@
+@charset "UTF-8";
+#exhibits {
+    width: 100%;
+    height: calc(100vh - 60px);
+    margin: 0 auto;
+}
+
+#exhibits form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#exhibits #select_image {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#exhibits .product_image {
+    display: none;
+}
+
+#exhibits label {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
+    background: #EEE;
+    border: 1px solid #000;
+}
+
+#exhibits label img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.classic {
+    /* styling */
+    width: 100%;
+    background: #EEE;
+    border-radius: 4px;
+    display: block;
+    font: inherit;
+    line-height: 1.3em;
+    padding: 0.5em 3.5em 0.5em 1em;
+    margin-bottom: 10px;
+    /* reset */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+select.classic {
+    background-image: linear-gradient(45deg, transparent 50%, black 50%), linear-gradient(135deg, black 50%, transparent 50%), linear-gradient(to right, gray, gray);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0;
+    background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+    background-repeat: no-repeat;
+}
+
+select.classic:focus {
+    background-image: linear-gradient(45deg, white 50%, transparent 50%), linear-gradient(135deg, transparent 50%, white 50%), linear-gradient(to right, gray, gray);
+    background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, 100% 0;
+    background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+    background-repeat: no-repeat;
+    border-color: grey;
+    outline: 0;
+}
+
+#product_name {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#product_name input {
+    font-size: 1.3em;
+    border-radius: 10px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 5px;
+    background: #EEE;
+}
+
+textarea {
+    width: 100%;
+    font-size: 1em;
+    border-radius: 10px;
+    background: #EEE;
+}
+
+#details {
+    margin: 10px 0;
+}
+
+#price {
+    margin: 10px 0;
+    line-height: 1.3em;
+}
+
+#price input {
+    background: #EEE;
+    font-size: 1.3em;
+    width: 90%;
+    border-radius: 10px;
+}
+
+#comment {
+    font-size: 0.8em;
+    margin-bottom: 20px;
+}
+
+#exhibits #button,
+#verification_exhibits #button,
+#done_exhibits form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#exhibits button,
+#verification_exhibits button,
+#done_exhibits button {
+    width: 45%;
+    font-size: 1.3em;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 0;
+}
+
+#exhibits #confirm,
+#verification_exhibits #confirm {
+    background: #FF9900;
+    border: 2px solid #B37212;
+    color: #FFF;
+}
+
+#verification_exhibits {
+    padding-top: 30px;
+}
+
+#verification_exhibits form {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#verification_exhibits #product_name {
+    height: 30px;
+    font-size: 1.3em;
+    line-height: 30px;
+    text-align: center;
+}
+
+#verification_exhibits #produc_img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#verification_exhibits #produc_img img {
+    width: 100%;
+}
+
+#verification_exhibits #prodct_description {
+    margin-bottom: 10px;
+}
+
+#verification_exhibits pre {
+    width: 100%;
+    word-break: break-all;
+    white-space: pre-line;
+    /* CSS 3.0 */
+    margin-bottom: 10px;
+}
+
+#verification_exhibits #price {
+    text-align: right;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+#done_exhibits {
+    background: #f0f;
+}
+
+#done_exhibits div {
+    padding-top: 30px;
+    width: 90%;
+    margin: 0 auto;
+    background: #0ff;
+}
+
+#done_exhibits ul {
+    background: #ff0;
+    margin-bottom: 30px;
+}
+
+#done_exhibits ul li {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+#done_exhibits ul li:last-child {
+    text-align: right;
+}
