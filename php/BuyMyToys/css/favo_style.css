@@ -1,0 +1,45 @@
+@charset "UTF-8";
+#fovo_info {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#fovo_info p {
+    padding-top: 30px;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#fovo_info .favo_list input {
+    line-height: 30px;
+}
+
+#fovo_info .favo_list li {
+    height: 60px;
+    border: 1px solid #FF9900;
+    background: #EEE;
+    border-radius: 10px;
+    font-size: 1.1em;
+}
+
+#fovo_info .palents_list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 40px;
+    border: 1px solid #f90;
+    border-radius: 10px;
+    background: #EEE;
+    padding: 5px 0;
+}
+
+#fovo_info button {
+    width: 100%;
+    font-size: 1.3em;
+    border-radius: 10px;
+    background: #FF9900;
+    border: 2px solid #B37212;
+    color: #FFF;
+    cursor: pointer;
+}

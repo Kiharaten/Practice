@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JSON1-4</title>
+</head>
+<body>
+<script src="./jquery-3.4.1.min.js"></script>
+
+<h1>JSON1-4</h1>
+
+
+<div id="output1"></div><hr>
+<div id="output2"></div>
+
+<script>
+
+$(function(){
+	$.ajax({
+		type: "GET",
+		url: "./json1-4.php",
+		//dataType: "json",
+
+		// data:{
+		// 	key:value
+		// }
+	}).done(function(data){
+		var get_json = JSON.stringify(data);
+		var data_json = JSON.parse(data);
+		$("#output1").append(get_json);
+		$("#output2").append(data_json);
+		console.log(data);
+		console.log(get_json);
+		console.log(data_json);
+		//console.log(data_json);
+
+		// console.log(data);
+		// console.log(typeof data);
+		// $("#output1").html(data);
+		// const data_json = JSON.parse(data);
+		// console.log('変換後');
+		// console.log('data_json');
+
+	// //Ajax分解
+	// function getValue(obj){
+	// 	if(typeof obj === 'object'){
+	// 		var strValue = '';
+	// 		for (key in obj)
+	// 	}
+	// }
+	}).fail(function (xhr){
+		alert('エラー');
+	}).always(function (xhr){
+		alert('完了');
+	});
+
+})
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

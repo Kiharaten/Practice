@@ -1,0 +1,34 @@
+<html>
+<body>
+<script src="./jquery-3.4.1.min.js"></script>
+
+<h1>JSON1-3</h1>
+
+<form action="json1-3.php" method="POST">
+<input type="text" name="my_text" id="form_id">
+<input type="submit" id="btn_id">
+</form>
+
+<script>
+$(function(){
+
+var array = ['bar', 100, true, {'a':'b'}, {'xxx':'baz', 'yyy':'barbaz'}]
+console.log(JSON.stringify(array));
+
+
+$('#btn_id').click(function(){
+	$('<input>').attr({
+	'type' : 'hidden',
+	'name' : 'value',
+	'value' : JSON.stringify(array)
+	}).appendTo('#form_id');
+})
+
+$('#form_id').submit();
+
+
+});
+</script>
+
+</body>
+</html>

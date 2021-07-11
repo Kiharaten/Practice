@@ -1,0 +1,58 @@
+@charset "UTF-8";
+body {
+    background: #EEE;
+}
+
+
+/* address */
+
+#address_add {
+    height: calc(100vh - 60px);
+    position: relative;
+    padding: 60px 0;
+    width: 100%;
+}
+
+#address_add form {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    margin: 0 auto;
+}
+
+#address_add form input {
+    width: 98%;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    background: #EEEEEE;
+    border-radius: 10px;
+}
+
+#address_add form input:last-of-type {
+    margin-bottom: 60px;
+}
+
+#address_add form #add_address_button {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#address_add form #add_address_button button {
+    background: #FFF;
+    border: 1px solid #000;
+    width: 45%;
+    font-size: 1.3em;
+    border-radius: 10px;
+}
+
+#address_add form #add_address_button #confirm {
+    border: 1px solid #B37212;
+    background: #FF9900;
+    color: #FFFFFF;
+}
+
+
+/* bank */

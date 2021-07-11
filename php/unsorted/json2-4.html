@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JSON2-4</title>
+<body>
+<script src="./jquery-3.4.1.min.js"></script>
+
+<h1>JSON2-4</h1>
+
+<p>ID：<input type="text" name="id" value="12345"></p>
+<p>名前：<input type="text" name="name" value="はるのたろう"></p>
+<p>性別：<input type="radio" name="gender" value="women">女  <input type="radio" name="gender" value="men" checked>男
+    <label id="gender_error"></label>
+</p>
+
+<p>あなたの趣味は？</p>
+<p>
+    <input type="checkbox" name="hobby" value="1">ゲーム
+    <input type="checkbox" name="hobby" value="2">読書
+    <input type="checkbox" name="hobby" value="3" checked>旅行
+    <input type="checkbox" name="hobby" value="4" checked>ネット
+    <input type="checkbox" name="hobby" value="5">ドライブ
+    <label id="hobby_error"></label>
+</p>
+​
+<p>あなたが使っている携帯会社？</p>
+<p>
+    <select name="mobilephone">
+        <option value="1">Docomo</option>
+        <option value="2">au</option>
+        <option value="3" selected>softbank</option>
+        <option value="4">楽天</option>
+        <option value="5">その他</option>
+    </select>
+</p>
+<p>好きな料理は？</p>
+<p>
+    <select name="food" size="5" multiple>
+        <option value="1">和食</option>
+        <option value="2" selected>洋食</option>
+        <option value="3" selected>中華</option>
+        <option value="4" selected>イタリアン</option>
+        <option value="5">その他</option>
+    </select><label id="food_error"></label>
+</p>
+​
+<button id="button">ボタン</button><br><br>
+JSで作成した連想配列をJSON化(JSON.stringify):<br><div id="output1"></div><hr>
+PHPから受信した値を出力:<br><div id="output2"></div><hr>
+PHPから受信した値をParse(JSON.parse)した値:<br><div id="output3"></div><br>
+
+
+<script>
+
+$(function(){
+
+    $('#button').click(function(){
+
+    $("#output1").empty();
+    $("#output2").empty();
+    $("#output3").empty();
+
+    var ary_data = {};
+    ary_data.ID = $('input[name="id"]').val();
+    ary_data.name = $('input[name="name"]').val();
+    ary_data.gender = $('input[name="gender"]:checked').val();
+
+    var array = [];
+    $('input:checkbox[name="hobby"]:checked').each(function(){
+        array.push($(this).val());
+    });
+
+    ary_data.hobby = array;
+    ary_data.mobilephone = $('select[name=mobilephone]').val();
+    ary_data.food = $('select[name=food]').val();
+
+    var send_data = JSON.stringify(ary_data);
+    $("#output1").append(send_data);
+
+    $.ajax({
+        type: "POST",
+        url: "./json2-4.php",
+        data: send_data
+    }).done(function( data, msg, status, xhr){
+        console.log("success");
+        console.log("msg = " + msg);
+        console.log("status = " + status);
+        console.log("xhr = " + xhr);
+
+        var get_json = JSON.parse(data);
+        $("#output2").append(data);
+        for(var key in get_json){
+            $("#output3").append("キー:" + key + " ");
+            $("#output3").append("値:" + get_json[key] +"<br/>")
+        }
+    }).fail(function(xhr, status, error){
+        console.log("error");
+    }).always(function(xhr, status){
+        console.log("fin");
+    });
+
+
+    })
+});
+
+</script>
+
+</body>
+</html>

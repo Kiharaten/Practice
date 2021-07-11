@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Sample</title>
+    <!-- BootstrapのCSS読み込み -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+	<script src="../js/jquery-3.4.1.min.js"></script>
+
+	<h1>JSON1-2</h1>
+
+	<form action="../php/json1-2.php" method="GET">
+	<input type="text" name="my_text" id="form_id">
+	<input type="submit" id="btn_id">
+	</form>
+
+	<script>
+	$(function(){
+
+	var array = ['bar', 100, true, {'a':'b'}, {'xxx':'baz', 'yyy':'barbaz'}]
+	console.log(JSON.stringify(array));
+
+
+	$('#btn_id').click(function(){
+		$('<input>').attr({
+		'type' : 'hidden',
+		'name' : 'value',
+		'value' : JSON.stringify(array)
+		}).appendTo('#form_id');
+	})
+
+	$('#form_id').submit();
+
+
+	});
+	</script>
+
+  </body>
+</html>
