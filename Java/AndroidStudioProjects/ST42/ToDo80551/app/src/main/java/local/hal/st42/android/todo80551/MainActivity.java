@@ -1,5 +1,6 @@
 package local.hal.st42.android.todo80551;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -18,13 +19,16 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
-import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     /**
@@ -71,14 +75,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActionBar actionBar = getActionBar();
+        actionBar.hide();
 
+        /********** スクローリングアクティビティの設定 **********/
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        CollapsingToolbarLayout toolbarLayout = findViewById(R.id.toolbarLayout);
+        toolbarLayout.setTitle(getString(R.string.app_name));
+        toolbarLayout.setExpandedTitleColor(Color.WHITE);
+        toolbarLayout.setCollapsedTitleTextColor(Color.LTGRAY);
+
+        /********** リストビューの設定 **********/
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         _menuCategory = settings.getInt("settings", Typeface.NORMAL);
         _lvToDoList = findViewById(R.id.lvArticleList);
         _lvToDoList.setOnItemClickListener(new ListItemClickListener());
-
         _helper = new DatabaseHelper(getApplicationContext());
 
+        /********** ToDoリストの取得 **********/
         String[] from = {"name", "deadline", "done"};
         int[] to = {R.id.tvToDoName, R.id.tvToDoDeadline, R.id.cbToDoCheck};
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(MainActivity.this, R.layout.row, null, from, to, 0);
@@ -239,11 +254,12 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 追加ボタン用イベント処理メソッド。
      */
-    public void onAddButtonClick(View view){
+    public void onAddFabClick(View view){
         Intent intent = new Intent(getApplicationContext(), ToDoEditActivity.class);
         intent.putExtra("mode", MODE_INSERT);
         startActivity(intent);
     }
+
 
     //*************** アクションバー関連 ********************
     /**
@@ -312,12 +328,12 @@ public class MainActivity extends AppCompatActivity {
         return returnVal;
     }
 
-    /**
-     * 追加ボタン用イベント処理メソッド。
-     */
+//    /**
+//     * 追加ボタン用イベント処理メソッド。
+//     */
 //    public void onAddButtonClick(){
 //        Intent intent = new Intent(getApplicationContext(), ToDoEditActivity.class);
 //        intent.putExtra("mode", MODE_INSERT);
 //        startActivity(intent);
 //    }
-}    
+}

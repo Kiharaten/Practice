@@ -1,12 +1,14 @@
 package local.hal.st42.android.todo80551;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -17,6 +19,8 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -46,11 +50,19 @@ public class ToDoEditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_do_edit);
 
+        /********** スクローリングアクティビティの設定 **********/
+//        Toolbar toolbar = findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//        CollapsingToolbarLayout toolbarLayout = findViewById(R.id.toolbarLayout);
+//        toolbarLayout.setTitle(getString(R.string.app_name));
+//        toolbarLayout.setExpandedTitleColor(Color.WHITE);
+//        toolbarLayout.setCollapsedTitleTextColor(Color.LTGRAY);
+
         // 戻るボタン表示
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+//
         _helper = new DatabaseHelper(getApplicationContext());
-
+//
         Intent intent = getIntent();
         _mode = intent.getIntExtra("mode", MainActivity.MODE_INSERT);
 
@@ -192,6 +204,7 @@ public class ToDoEditActivity extends AppCompatActivity {
             finish();
         }
     }
+
 
     /**
      * 追加の際は削除ボタンを表示しないための処理

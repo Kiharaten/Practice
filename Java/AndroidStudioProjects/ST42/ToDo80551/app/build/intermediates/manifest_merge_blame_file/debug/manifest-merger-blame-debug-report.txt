@@ -11,7 +11,7 @@
 9-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml
 10
 11    <application
-11-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:5:5-20:19
+11-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:5:5-30:19
 12        android:allowBackup="true"
 12-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -28,23 +28,38 @@
 19        android:testOnly="true"
 20        android:theme="@style/Theme.ToDo80551" >
 20-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:11:9-47
-21        <activity android:name="local.hal.st42.android.todo80551.ToDoEditActivity" />
-21-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:12:9-63
-21-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:12:19-51
-22        <activity android:name="local.hal.st42.android.todo80551.MainActivity" >
-22-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:13:9-19:20
-22-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:13:19-47
-23            <intent-filter>
-23-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:14:13-18:29
-24                <action android:name="android.intent.action.MAIN" />
-24-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:15:17-69
-24-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:15:25-66
-25
-26                <category android:name="android.intent.category.LAUNCHER" />
-26-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:17:17-77
-26-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:17:27-74
-27            </intent-filter>
-28        </activity>
-29    </application>
-30
-31</manifest>
+21        <activity android:name="local.hal.st42.android.todo80551.MainActivity" >
+21-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:12:9-20:20
+21-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:13:13-41
+22
+23            <!-- android:theme="@style/Theme.AppCompat.Light.NoActionBar"> -->
+24            <intent-filter>
+24-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:15:13-19:29
+25                <action android:name="android.intent.action.MAIN" />
+25-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:16:17-69
+25-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:16:25-66
+26
+27                <category android:name="android.intent.category.LAUNCHER" />
+27-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:18:17-77
+27-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:18:27-74
+28            </intent-filter>
+29        </activity>
+30        <activity android:name="local.hal.st42.android.todo80551.ToDoEditActivity" >
+30-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:21:9-29:20
+30-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:22:13-45
+31
+32            <!-- android:theme="@style/Theme.AppCompat.Light.DarkActionBar"> -->
+33            <intent-filter>
+33-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:15:13-19:29
+34                <action android:name="android.intent.action.MAIN" />
+34-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:16:17-69
+34-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:16:25-66
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:18:17-77
+36-->/Users/sukerock/Documents/Practice/Java/AndroidStudioProjects/ST42/ToDo80551/app/src/main/AndroidManifest.xml:18:27-74
+37            </intent-filter>
+38        </activity>
+39    </application>
+40
+41</manifest>
