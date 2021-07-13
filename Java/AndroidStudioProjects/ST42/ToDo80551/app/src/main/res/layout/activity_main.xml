@@ -41,7 +41,7 @@
 
 <!--    </androidx.core.widget.NestedScrollView>-->
 
-    <include layout="@layout/content_scrolling" />
+<!--    <include layout="@layout/content_scrolling" />-->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAdd"
