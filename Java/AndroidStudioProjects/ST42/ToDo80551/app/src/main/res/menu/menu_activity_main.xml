@@ -29,10 +29,10 @@
             </menu>
         </item>
 
-<!--        <item-->
-<!--            android:id="@+id/addButton"-->
-<!--            android:icon="@android:drawable/ic_menu_add"-->
-<!--            android:title="タスク登録"-->
-<!--            app:showAsAction="always|withText" />-->
+        <!--        <item-->
+        <!--            android:id="@+id/addButton"-->
+        <!--            android:icon="@android:drawable/ic_menu_add"-->
+        <!--            android:title="タスク登録"-->
+        <!--            app:showAsAction="always|withText" />-->
     </item>
 </menu>

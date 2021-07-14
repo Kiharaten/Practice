@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+ST42 Androidサンプル07 スクローリングアクティビティ
 画面レイアウトファイル
-ファイル名="activity_main.xml"
+
+ファイル名=activity_main.xml
 -->
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -30,27 +32,19 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-<!--    <androidx.core.widget.NestedScrollView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
-<!--        <ListView-->
-<!--            android:id="@+id/lvArticleList"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"/>-->
-
-<!--    </androidx.core.widget.NestedScrollView>-->
-
-<!--    <include layout="@layout/content_scrolling" />-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTodo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="18dp"
-        android:onClick="onAddButtonClick"
+        android:layout_margin="20dp"
         android:src="@drawable/ic_baseline_add_24"
-        app:backgroundTint="#ffffff"
-        app:layout_anchor="@id/appbar"
+        app:layout_anchor="@id/rvTodo"
+        app:backgroundTint="@color/white"
         app:layout_anchorGravity="bottom|end" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

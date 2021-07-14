@@ -1,12 +1,14 @@
 package local.hal.st42.android.todo80551;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -18,6 +20,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -26,7 +30,7 @@ import java.util.Locale;
 
 import static java.lang.Integer.parseInt;
 
-public class ToDoEditActivity extends AppCompatActivity {
+public class TodoActivity extends AppCompatActivity {
 
     /**
      * 新規登録モードか更新モードかを表すフィールド。
@@ -44,7 +48,15 @@ public class ToDoEditActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_to_do_edit);
+        setContentView(R.layout.activity_todo);
+
+        /********** ツールバー起動 **********/
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        CollapsingToolbarLayout toolbarLayout = findViewById(R.id.toolbarLayout);
+        toolbarLayout.setTitle(getString(R.string.app_name));
+        toolbarLayout.setExpandedTitleColor(Color.WHITE);
+        toolbarLayout.setCollapsedTitleTextColor(Color.LTGRAY);
 
         // 戻るボタン表示
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -64,7 +76,7 @@ public class ToDoEditActivity extends AppCompatActivity {
 
         if (_mode == MainActivity.MODE_INSERT) {
             TextView tvNameEdit = findViewById(R.id.tvToDoEditPageName);
-            tvNameEdit.setText(R.string.tv_to_do_add_pagename);
+            tvNameEdit.setText(R.string.tv_todo_add_pagename);
         } else {
             _idNo = intent.getLongExtra("idNo", 0);
             SQLiteDatabase db = _helper.getWritableDatabase();
@@ -91,14 +103,12 @@ public class ToDoEditActivity extends AppCompatActivity {
      * @param view 画面部品。
      */
     public void showDatePickerDialog(View view) {
-        TextView tvDeadline = findViewById(R.id.tvDeadline);
-        String deadline = tvDeadline.getText().toString();
-
+        String deadline = findViewById(R.id.tvDeadline).toString();
         int year = Integer.parseInt(deadline.substring(0,4));
         int month = Integer.parseInt(deadline.substring(5, 7)) - 1;
         int date = Integer.parseInt(deadline.substring(8, 10));
 
-        DatePickerDialog dialog = new DatePickerDialog(ToDoEditActivity.this, new DatePickerDialogDateSetListener(), year, month, date);
+        DatePickerDialog dialog = new DatePickerDialog(TodoActivity.this, new DatePickerDialogDateSetListener(), year, month, date);
         dialog.show();
     }
 
@@ -108,10 +118,9 @@ public class ToDoEditActivity extends AppCompatActivity {
     private class DatePickerDialogDateSetListener implements DatePickerDialog.OnDateSetListener {
         @Override
         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-
             String deadline = String.format("%04d年%02d月%02d日", year, (month + 1), dayOfMonth);
             TextView tvDeadline = findViewById(R.id.tvDeadline);
-            tvDeadline.setText((CharSequence) deadline);
+            tvDeadline.setText(deadline);
         }
     }
 
@@ -121,7 +130,7 @@ public class ToDoEditActivity extends AppCompatActivity {
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu_to_do_edit_activity, menu);
+        getMenuInflater().inflate(R.menu.menu_activity_main, menu);
         return true;
     }
 
@@ -156,7 +165,8 @@ public class ToDoEditActivity extends AppCompatActivity {
         extras.putLong("id", _idNo);
         FullDialogFragment dialog = new FullDialogFragment();
         FragmentManager manager = getSupportFragmentManager();
-        //FullDialogFragment1へ値送る
+
+        /***** ダイアログで表示 *****/
         dialog.setArguments(extras);
         dialog.show(manager, "FullDialogFragment");
     }
@@ -169,7 +179,7 @@ public class ToDoEditActivity extends AppCompatActivity {
         String inputName = etName.getText().toString();
 
         if (inputName.equals("")) {
-            Toast.makeText(ToDoEditActivity.this, R.string.toast_empty , Toast.LENGTH_SHORT).show();
+            Toast.makeText(TodoActivity.this, R.string.toast_empty , Toast.LENGTH_SHORT).show();
         }
         else{
             TextView etDeadline = findViewById(R.id.tvDeadline);

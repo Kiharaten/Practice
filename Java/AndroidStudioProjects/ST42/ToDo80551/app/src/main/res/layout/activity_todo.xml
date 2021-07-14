@@ -1,26 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 画面レイアウトファイル
-ファイル名="activity_to_do_edit.xml"
+ファイル名="activity_todo.xml"
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="12dp">
+    android:orientation="vertical">
     <!-- android:rotationY="180" -->
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:theme="?attr/actionBarTheme"
+                android:textAlignment="center"
+                app:layout_collapseMode="pin"
+                android:gravity="center_horizontal" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:padding="12dp">
 
         <TextView
             android:id="@+id/tvToDoEditPageName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="@string/tv_to_do_edit_pagename"
+            android:text="@string/tv_todo_add_pagename"
             android:textSize="25sp" />
     </LinearLayout>
 
@@ -33,10 +58,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/tv_to_do_edit_name" />
+            android:text="@string/tv_todo_name" />
 
         <EditText
-            android:id="@+id/etName"
+            android:id="@+id/etTodoName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"/>
@@ -52,16 +77,16 @@
             android:layout_height="match_parent"
             android:layout_weight="0.1"
             android:gravity="center"
-            android:text="@string/tv_to_do_edit_deadline" />
+            android:text="@string/tv_todo_deadline" />
 
         <TextView
-            android:id="@+id/tvDeadline"
+            android:id="@+id/tvTodoDeadline"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
             android:gravity="center"
             android:onClick="showDatePickerDialog"
-            android:text="@string/tv_to_do_edit_calendar" />
+            android:text="@string/tv_todo_calendar" />
 
         <Switch
             android:id="@+id/swDone"
@@ -69,7 +94,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:gravity="center"
-            android:text="@string/tv_to_do_edit_done" />
+            android:text="@string/tv_todo_done" />
     </LinearLayout>
 
     <LinearLayout
@@ -77,10 +102,11 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/tv_to_do_edit_note" />
+            android:text="@string/tv_todo_note" />
 
         <EditText
             android:id="@+id/etNote"

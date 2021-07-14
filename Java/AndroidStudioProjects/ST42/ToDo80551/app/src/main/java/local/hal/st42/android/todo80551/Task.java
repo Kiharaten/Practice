@@ -1,12 +1,5 @@
 package local.hal.st42.android.todo80551;
 
-/**
- * ST42 課題01 ToDoアプリ作成
- *
- * リスト情報を格納するエンティティクラス
- *
- * @author Kiharaten
- */
 public class Task {
     /**
      * 主キーのID値。

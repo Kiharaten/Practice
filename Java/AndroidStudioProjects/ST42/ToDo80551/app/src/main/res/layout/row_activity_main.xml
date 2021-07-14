@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-ST42 Androidサンプル04 DBデータに応じたリストビューのカスタマイズ
-ListViewの各行のレイアウトファイル
+ST42 Androidサンプル08 リサイクラービュー
+RecyclerViewの各行のレイアウトファイル
 
-ファイル名=row.xml
+ファイル名=row_activity_main.xml
 -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/row"
+    android:id="@+id/rowActivityMain"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
-    android:orientation="horizontal">
+    android:background="?attr/selectableItemBackground"
+    android:orientation="horizontal"
+    android:padding="10dp">
 
     <LinearLayout
         android:layout_width="330dp"
@@ -20,7 +22,7 @@ ListViewの各行のレイアウトファイル
         android:padding="10dp">
 
         <TextView
-            android:id="@+id/tvToDoName"
+            android:id="@+id/tvTodoName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -39,7 +41,7 @@ ListViewの各行のレイアウトファイル
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/tvToDoDeadline"
+                android:id="@+id/tvTodoDeadline"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -51,10 +53,36 @@ ListViewの各行のレイアウトファイル
 
 
     <CheckBox
-        android:id="@+id/cbToDoCheck"
+        android:id="@+id/cbTodoCheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:focusable="false"
         android:gravity="center" />
 
+<!--    <ImageView-->
+<!--        android:id="@+id/imIconRow"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginRight="10dp"-->
+<!--        android:src="@android:drawable/ic_menu_share"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvMenuNameRow"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textSize="18sp"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvMenuPriceRow"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        android:gravity="right"-->
+<!--        android:textSize="14sp"/>-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/yen"-->
+<!--        android:textSize="14sp"/>-->
 </LinearLayout>
