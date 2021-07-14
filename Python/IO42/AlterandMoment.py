@@ -32,7 +32,6 @@ GPIO.setmode(GPIO.BCM)
 SW = 4
 LED1 = 17
 LED2 = 27
-state = ""
 pushFlg1 = 0
 pushFlg2 = 0
 cnt = 0
@@ -48,29 +47,21 @@ while True:
         if flg:
             GPIO.output(LED1, True)
             GPIO.output(LED2, True)
-            state = "switch-ON"
-            print(state)
+            print("switch-ON")
+            pushFlg1 = 1
             
     elif not GPIO.input(SW):
         flg = countSec(5, 0)
         if flg:
             GPIO.output(LED2, False)
-            state = "switch-OFF"
-            print(state)
-
-    if state == "switch-ON":
-        pushFlg1 = 1
-        
-    elif state == "switch-OFF":
-        pushFlg1 = 0
+            print("switch-OFF")
+            pushFlg1 = 0
 
         if pushFlg1 != pushFlg2:
             cnt = cnt + 1
 
         if cnt % 2 == 0:
             GPIO.output(LED1, False)
-            
-            
     
     print("pushFlg1 = {0}".format(pushFlg1))
     print("pushFlg2 = {0}".format(pushFlg2))
