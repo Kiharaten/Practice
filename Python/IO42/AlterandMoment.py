@@ -1,6 +1,7 @@
 # coding:utf-8
 import RPi.GPIO as GPIO
 import time
+import os
 
 def countSec(type, timer):
     """
@@ -11,21 +12,21 @@ def countSec(type, timer):
     """
     cnt = 0
 
-    print("\r" + "\ntype = {0}, timer = {1} count start".format(type, timer))
+    print("\ntype = {0}, timer = {1} count start".format(type, timer))
     while GPIO.input(SW) == type and cnt < timer: # 0.1秒刻みで押している時間を数える
-        print("gpio = {0}".format(GPIO.input(SW)))
+        print("gpio = {0}".format(GPIO.input(SW), end = ""))
         cnt = cnt + 1
         time.sleep(0.1)
     else:
         print("count stop, ", end = "")
         if timer <= cnt: # 正常終了の場合True, 異常終了の場合Falseを返す
-            print("return True")
+            print("return True, ", end = "")
             return True
         else:
             print("return False")
             return False
 
-# ---------- 主処理 ----------
+# ---------- 前処理 ----------
 GPIO.setwarnings(False) 
 GPIO.setmode(GPIO.BCM)
 
@@ -36,11 +37,11 @@ pushFlg1 = 0
 pushFlg2 = 0
 cnt = 0
 
-
 GPIO.setup(SW, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 GPIO.setup(LED1, GPIO.OUT, initial = False)
 GPIO.setup(LED2, GPIO.OUT, initial = False)
 
+# ---------- 主処理 ----------
 while True:
     if GPIO.input(SW):
         flg = countSec(1, 5)
@@ -56,14 +57,13 @@ while True:
             GPIO.output(LED2, False)
             print("switch-OFF")
             pushFlg1 = 0
-
             if pushFlg1 != pushFlg2:
                 cnt = cnt + 1
-
             if cnt % 2 == 0:
                 GPIO.output(LED1, False)
     
     print("pushFlg1 = {0}, pushFlg2 = {1}, cnt = {2}".format(pushFlg1, pushFlg2, cnt))
     pushFlg2 = pushFlg1
-    
+
+# ---------- 後処理 ----------
 GPIO.cleanup()
