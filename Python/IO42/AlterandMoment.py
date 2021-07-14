@@ -57,11 +57,11 @@ while True:
             print("switch-OFF")
             pushFlg1 = 0
 
-        if pushFlg1 != pushFlg2:
-            cnt = cnt + 1
+            if pushFlg1 != pushFlg2:
+                cnt = cnt + 1
 
-        if cnt % 2 == 0:
-            GPIO.output(LED1, False)
+            if cnt % 2 == 0:
+                GPIO.output(LED1, False)
     
     print("pushFlg1 = {0}, pushFlg2 = {1}, cnt = {2}".format(pushFlg1, pushFlg2, cnt))
     pushFlg2 = pushFlg1
