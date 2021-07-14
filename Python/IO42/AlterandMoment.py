@@ -11,18 +11,18 @@ def countSec(timer, type):
     """
     cnt = 0
 
-#    print("\ntype={0}, count timer={1} start".format(type, timer))
+    print("\ntype={0}, count timer={1} start".format(type, timer))
     while GPIO.input(SW) == type and cnt <= timer: # 0.1秒刻みで押している時間を数える
-#        print("gpio true ={0}".format(GPIO.input(SW)))
+        print("gpio true ={0}".format(GPIO.input(SW)))
         time.sleep(0.1)
         cnt = cnt + 1
     else:
-#        print("count stop")
+        print("count stop")
         if timer <= cnt: # 正常終了の場合True, 異常終了の場合Falseを返す
-#            print("return True")
+            print("return True")
             return True
         else:
-#            print("return False")
+            print("return False")
             return False
 
 # ---------- 主処理 ----------
