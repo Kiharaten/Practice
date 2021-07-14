@@ -46,37 +46,42 @@ GPIO.setup(LED1, GPIO.OUT, initial = False)
 GPIO.setup(LED2, GPIO.OUT, initial = False)
 
 # ---------- 主処理 ----------
-while True:
-    if GPIO.input(SW):
-        if count_second(1, 5):
-            GPIO.output(LED1, True)
-            GPIO.output(LED2, True)
-            text = "LED1-ON, LED2-ON"
-            pushFlg1 = 1
-            if pushFlg1 != pushFlg2:
-                pushCnt = pushCnt + 1
+try:
+    while True:
+        if GPIO.input(SW):
+            if count_second(1, 5):
+                GPIO.output(LED1, True)
+                GPIO.output(LED2, True)
+                text = "LED1-ON, LED2-ON"
+                pushFlg1 = 1
+                if pushFlg1 != pushFlg2:
+                    pushCnt = pushCnt + 1
 
-    elif not GPIO.input(SW):
-        if count_second(0, 5):
-            GPIO.output(LED1, False)
-            text = "LED1-OFF"
-            pushFlg1 = 0
-            if pushFlg1 != pushFlg2:
-                releaseCnt = releaseCnt + 1
+        elif not GPIO.input(SW):
+            if count_second(0, 5):
+                GPIO.output(LED1, False)
+                text = "LED1-OFF"
+                pushFlg1 = 0
+                if pushFlg1 != pushFlg2:
+                    releaseCnt = releaseCnt + 1
 
-            # ---------- オルタネート用
-            if releaseCnt % 2 == 0:
-                GPIO.output(LED2, False)
-                text = text + ", LED2-OFF"
-            else:
-                text = text + ", LED2-ON"
+                # ---------- オルタネート用
+                if releaseCnt % 2 == 0:
+                    GPIO.output(LED2, False)
+                    text = text + ", LED2-OFF"
+                else:
+                    text = text + ", LED2-ON"
 
-    print(text)
+        print(text)
+        #print("push flg 1 = {0}, push flg 2 = {1}".format(pushFlg1, pushFlg2))
+        print("push count = {0}, release count = {1}".format(pushCnt, releaseCnt))
+        pushFlg2 = pushFlg1
+
+# ---------- 後処理 ----------
+except KeyboardInterrupt:
+    print("\nKeyboardIntereupt")
+except:
+    print("\nUnknown error")
     
-    #print("push flg 1 = {0}, push flg 2 = {1}".format(pushFlg1, pushFlg2))
-    print("push count = {0}, release count = {1}".format(pushCnt, releaseCnt))
-    pushFlg2 = pushFlg1
-
-    # ---------- 後処理 ----------
-GPIO.cleanup()
-nnn
+finally:
+    GPIO.cleanup()
