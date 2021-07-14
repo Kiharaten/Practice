@@ -44,16 +44,14 @@ GPIO.setup(LED2, GPIO.OUT, initial = False)
 # ---------- 主処理 ----------
 while True:
     if GPIO.input(SW):
-        flg = countSec(1, 5)
-        if flg:
+        if countSec(1, 5):
             GPIO.output(LED1, True)
             GPIO.output(LED2, True)
             print("switch-ON")
             pushFlg1 = 1
             
     elif not GPIO.input(SW):
-        flg = countSec(0, 5)
-        if flg:
+        if countSec(0, 5):
             GPIO.output(LED2, False)
             print("switch-OFF")
             pushFlg1 = 0
