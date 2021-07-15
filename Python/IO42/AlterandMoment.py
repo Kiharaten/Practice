@@ -80,8 +80,6 @@ try:
 # ---------- 後処理 ----------
 except KeyboardInterrupt:
     print("\nKeyboardIntereupt")
-except:
-    print("\nUnknown error")
     
 finally:
     GPIO.cleanup()
