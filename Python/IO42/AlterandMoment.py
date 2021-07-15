@@ -27,26 +27,12 @@ def count_second(type, timer):
 
 
 class GpioControl:
-    def __init__(self, pull,  sw, led1, led2):
-        GPIO.setwarnings(False) 
-        GPIO.setmode(GPIO.BCM)
+    def __init__(self, pull, *led):
+        for i in led:
+            self.i = i
+            GPIO.setup(self.i, GPIO.out, initial = False)
 
-        self.sw = sw
-        self.led1 = led1
-        self.led2 = led2
-
-        if pull == "up":
-            GPIO.setup(sw, GPIO.IN, pull_up_down = GPIO.PUD_UP)
-        elif pull == "down":
-            GPIO.setup(sw, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
-        else:
-            print("pull type error")
-            return
-
-        GPIO.setup(led1, GPIO.OUT, initial = False)
-        GPIO.setup(led2, GPIO.OUT, initial = False)
-
-        print("initialized sw = {0}, led1 = {1}, led2 = {2}".format(self.sw, self.led1, self.led2))
+        print("initialized led1 = {1}, led2 = {2}".format(self.sw, self.led1, self.led2))
 
     def switch_press(self):
         GPIO.output(led1, True)
@@ -66,7 +52,11 @@ class GpioControl:
 
 
 # ---------- 前処理 ----------
-raspIo = GpioControl("down", 4, 17, 27)
+GPIO.setwarnings(False) 
+GPIO.setmode(GPIO.BCM)
+
+raspIo = GpioControl(17, 27)
+sw = 4
 pushFlg1 = 0
 pushFlg2 = 0
 cnt = 0
