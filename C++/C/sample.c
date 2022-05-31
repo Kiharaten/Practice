@@ -19,13 +19,16 @@ void sample2(int array[2][10]) {
 
 // preview:固定長配列のポインタ受け取り
 int main() {
-    // 初期化した配列の受け取り
+    // 受け取り用配列の準備
     int array[2][10];
-    sample1(array);
-    sample2(array);
     int i;
     int j;
 
+    // 初期化した配列の受け取り
+    sample1(array);
+    sample2(array);
+
+        // 配列の中身の表示
     for(i = 0; i < 2; i++) {
         printf("\n// ----- sample%d\n", i + 1);
         for(j = 0; j < 10; j++) {
